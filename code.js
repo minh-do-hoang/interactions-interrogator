@@ -1,15 +1,5 @@
 hovered = false;
 async function yeet(htmlelement){
-
-    react_links = { "https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/r4h1SXzlm0B.png" : "love",
-            "https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/fqb8rfFxpfX.png" : "like",
-            "https://static.xx.fbcdn.net/rsrc.php/v3/yo/r/7-3YmWpFyGJ.png" : "wow",
-            "https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/pPGGfJHu68A.png" : "care",
-            "https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/yMAXL0cdq9q.png" : "haha",
-            "https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/3uLTUTwjP7O.png" : "angry",
-            "https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/bltK5gY9gdu.png" : "sad"
-    };
-    
     while(!hovered || htmlelement.getElementsByClassName("oi732d6d ik7dh3pa d2edcug0 hpfvmrgz qv66sw1b c1et5uql a8c37x1j hop8lmos enqfppq2 e9vueds3 j5wam9gi knj5qynh oo9gr5id hzawbc8m").length == 0){
         await sleep(500);
     }
@@ -41,7 +31,7 @@ async function yeet(htmlelement){
             information[name][0]++;
         }
         else{
-            information[name] = [1, "None", false];
+            information[name] = [1, false, false];
         }
     }
 
@@ -56,12 +46,11 @@ async function yeet(htmlelement){
     reacts = htmlelement.getElementsByClassName("q5bimw55 rpm2j7zs k7i0oixp gvuykj2m j83agx80 cbu4d94t ni8dbmo4 eg9m0zos l9j0dhe7 du4w35lb ofs802cu pohlnb88 dkue75c7 mb9wzai9 l56l04vs r57mb794 kh7kg01d c3g1iek1 otl40fxz cxgpxx05 rz4wbd8a sj5x9vvc a8nywdso")[0].getElementsByClassName("ow4ym5g4 auili1gw rq0escxv j83agx80 buofh1pr g5gj957u i1fnvgqd oygrvhab cxmmr5t8 hcukyx3x kvgmc6g5 nnctdnn4 hpfvmrgz qt6c0cv9 jb3vyjys l9j0dhe7 du4w35lb bp9cbjyn btwxx1t3 dflh9lhu scb9dxdr");
     for(var i = 0; i < reacts.length; i++){
         name = reacts[i].children[1].firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.firstChild.textContent;
-        react = react_links[reacts[i].firstChild.firstChild.firstChild.firstChild.children[2].firstChild.firstChild.firstChild.src]
         if(information[name]){
-            information[name][1] = react;
+            information[name][1] = true;
         }
         else{
-            information[name] = [0, react, false];
+            information[name] = [0, true, false];
         }
     }
 
@@ -88,7 +77,7 @@ async function yeet(htmlelement){
             information[name][2] = true;
         }
         else{
-            information[name] = [0, "None", true];
+            information[name] = [0, false, true];
         }
     }
 
