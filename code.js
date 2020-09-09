@@ -81,10 +81,7 @@ async function yeet(htmlelement){
         }
     }
 
-    close = htmlelement.getElementsByClassName("hu5pjgll m6k467ps sp_6vYwcjvw5IC_2x sx_50b0e1");
-    for(var i = 0; i < close.length; i++){
-        close[i].click();
-    }
+    document.querySelectorAll('div[aria-label="Close"]')[0].click();
     for (i in information){
         
         s += time + "," + i.replaceAll(",",".") +"," + information[i].join(",") + "\r\n";
