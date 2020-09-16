@@ -86,7 +86,6 @@ async function yeet(htmlelement){
     s = "";
     for(var i = 0; i < shares.length; i++){
         name = shares[i].innerText;
-        console.log(name)
         if(information[name]){
             information[name][2] = true;
         }
